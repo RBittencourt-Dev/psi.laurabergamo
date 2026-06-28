@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Psicóloga Laura Bergamo</title>
+  </head>
+  <body>
+    <div id="main">
+      <!-- BARRA DE NAVEGAÇÃO -->
+      <nav class="nav-container">
+        <!-- Logo da Laura -->
+        <img id="logo-nav" src="./img/logo-azul.png" alt="logo laura bergamo" />
+
+        <!-- Botão hamburger (mobile) -->
+        <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-label="Abrir menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <!-- Links de Navegação -->
+        <div class="nav-menu">
+          <ul>
+            <li><a href="#Home">HOME</a></li>
+            <li><a href="#Sobre">SOBRE</a></li>
+            <li><a href="#Serviços">SERVIÇOS</a></li>
+            <li><button id="nav-button" onclick="window.open('https://wa.me/5583996652001?text=Ol%C3%A1%20Laura%2C%20Gostaria%20de%20Agendar%20uma%20Consulta%21', '_blank')">AGENDAR CONSULTA</button></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Sessão HOME  -->
+      <div id="Home">
+        <div class="container-texto-home">
+          <span class="psicologia">PSICOLOGIA</span>
+
+          <h1>Cuidado que acolhe. Escuta que <span>transforma.</span></h1>
+
+          <p id="line">____________________________</p>
+
+          <p id="text-home">
+            Atendimento psicológico individual para adolescentes, adultos e
+            idosos.
+          </p>
+
+          <button id="home-button" onclick="window.open('https://wa.me/5583996652001?text=Ol%C3%A1%20Laura%2C%20Gostaria%20de%20Agendar%20uma%20Consulta%21', '_blank')">AGENDAR CONSULTA</button>
+        </div>
+
+        <img
+          id="laura-foto-home"
+          src="./img/laura-banner1.png"
+          alt="Foto da Laura"
+        />
+
+        <img id="logo-lb-home" src="./img/lb-azul.png" alt="lb logo azul" />
+      </div>
+      <script>
+        (function(){
+          const toggle = document.getElementById('nav-toggle');
+          const menu = document.querySelector('.nav-menu');
+          if (!toggle || !menu) return;
+          toggle.addEventListener('click', () => {
+            const opened = menu.classList.toggle('open');
+            toggle.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', opened);
+            // prevent body scroll when open
+            document.body.style.overflow = opened ? 'hidden' : '';
+          });
+          // close when a link is clicked
+          menu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', ()=> {
+              menu.classList.remove('open');
+              toggle.classList.remove('open');
+              toggle.setAttribute('aria-expanded', false);
+              document.body.style.overflow = '';
+            })
+          });
+        })();
+      </script>
+
+      <!-- Sessão 2  -->
+
+      <div id="session2">
+        <div class="card-acolhimento">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="acolhimento-icon"
+          >
+            <path
+              d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762"
+            />
+          </svg>
+
+          <p>Acolhimento</p>
+        </div>
+
+        <div class="card-crescimento">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="crescimento-icon"
+          >
+            <path
+              d="M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1"
+            />
+            <circle cx="12" cy="8" r="2" />
+            <path d="M12 10v12" />
+            <path d="M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z" />
+            <path d="M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z" />
+          </svg>
+
+          <p>Crescimento</p>
+        </div>
+
+        <div class="card-online">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="online-icon"
+          >
+            <path
+              d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"
+            />
+            <rect x="2" y="6" width="14" height="12" rx="2" />
+          </svg>
+
+          <p>Consultas Online</p>
+        </div>
+      </div>
+
+      <!-- Sessão SOBRE  -->
+      <div id="Sobre">
+        <img
+          id="foto-laura-sobre"
+          src="./img/laura-foto-sobre.jpeg"
+          alt="Foto do Sobre mim da Laura"
+        />
+
+        <div class="container-sobre-mim">
+          <span>Sobre Mim</span>
+
+          <h2>Olá, Eu sou Laura Bergamo</h2>
+
+          <h3>Psicóloga | CRP 07/44872</h3>
+
+          <p>
+            Minha escolha pela Psicologia nasceu daquilo que sempre fez parte de
+            quem eu sou: a empatia, o interesse genuíno pelas pessoas e a
+            importância que sempre dei à escuta. Durante minha trajetória, levei
+            um tempo para encontrar a profissão que realmente fazia sentido para
+            mim, mas, quando encontrei a Psicologia, tive a certeza de que era o
+            meu lugar.
+
+            <br />
+            <br />
+
+            Acredito que ser psicóloga vai muito além de ouvir. É acolher com
+            respeito, compreender cada história em sua singularidade e caminhar
+            ao lado de cada pessoa com responsabilidade, ética e compromisso.
+            Tenho consciência de que, em cada atendimento, estou diante de
+            alguém que carrega experiências, desafios, expectativas e
+            sentimentos que merecem ser tratados com sensibilidade e cuidado.
+
+            <br />
+            <br />
+
+            Atualmente, atuo como psicóloga clínica e sigo em constante
+            aprimoramento profissional. Estou realizando pós-graduações em
+            Avaliação Psicológica com Ênfase em Psicologia Forense e em
+            Orientação Educacional, buscando ampliar meus conhecimentos para
+            oferecer um atendimento cada vez mais qualificado e fundamentado na
+            ciência.
+
+            <br />
+            <br />
+
+            Meu compromisso é oferecer um espaço de escuta ética, acolhedora e
+            respeitosa, valorizando a individualidade de cada pessoa e
+            construindo, junto com ela, um processo de cuidado pautado na
+            ciência, na responsabilidade profissional e no respeito à sua
+            história.
+
+            <br />
+            <br />
+
+            Se você procura um espaço onde possa ser ouvido(a) com atenção,
+            respeito e acolhimento, será um prazer caminhar com você nesse
+            processo.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sessão Serviços  -->
+
+      <div id="Serviços">
+        <div class="container-texto-serviços">
+          <span>COMO POSSO TE AJUDAR</span>
+
+          <h2>Serviços</h2>
+
+          <p>
+            Atendimento psicológico
+            <br />
+            personalizado para diferentes
+            <br />
+            fases e necessidades da vida
+          </p>
+
+          <button onclick="window.open('https://wa.me/5583996652001?text=Ol%C3%A1%20Laura%2C%20Gostaria%20de%20Agendar%20uma%20Consulta%21', '_blank')">AGENDAR CONSULTA</button>
+        </div>
+
+        <div class="container-cards">
+          <!-- Psicoterapia Individual -->
+          <div class="cards" id="card-psicoterapia">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="psicoterapia-icon"
+            >
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+
+            <h4>Psicoterapia Individual</h4>
+
+            <p>
+              Ofereço atendimento psicológico individual para adolescentes,
+              adultos e idosos, com acolhimento, ética e respeito à
+              singularidade de cada pessoa.
+            </p>
+          </div>
+
+          <!-- Adolescentes -->
+          <div class="cards" id="card-Adolescentes">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="adolescentes-icon"
+            >
+              <circle cx="12" cy="5" r="1" />
+              <path d="m9 20 3-6 3 6" />
+              <path d="m6 8 6 2 6-2" />
+              <path d="M12 10v4" />
+            </svg>
+
+            <h4>Adolescentes</h4>
+
+            <p>
+              Acompanhamento psicológico para adolescentes, oferecendo suporte
+              diante das transformações, desafios e descobertas dessa fase da
+              vida.
+            </p>
+          </div>
+
+          <div class="cards" id="card-Adultos">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="adultos-icon"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <circle cx="9" cy="7" r="4" />
+            </svg>
+
+            <h4>Adultos</h4>
+
+            <p>
+              Um espaço de escuta e acolhimento para enfrentar desafios
+              emocionais, mudanças e questões relacionadas às diferentes etapas
+              da vida.
+            </p>
+          </div>
+
+          <div class="cards" id="card-Idosos">
+            <img
+              class="idosos-icon"
+              src="./assets/old1.svg"
+              alt="Idosos Icone"
+              width="24px"
+            />
+
+            <h4>Idosos</h4>
+
+            <p>
+              Acompanhamento psicológico que respeita a história de vida,
+              favorecendo o cuidado emocional, a autonomia e a qualidade de
+              vida.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div id="Contato">
+        <img
+          id="lb-logo-branco"
+          src="./img/lb-white.svg"
+          alt="Logo lb Branco"
+        />
+
+        <div>
+          <h5>Vamos juntos nessa jornada?</h5>
+          <p>Dê o primeiro passo em direção ao seu bem-estar emocional</p>
+          <button onclick="window.open('https://wa.me/5583996652001?text=Ol%C3%A1%20Laura%2C%20Gostaria%20de%20Agendar%20uma%20Consulta%21', '_blank')">AGENDAR CONSULTA</button>
+        </div>
+
+        <div class="Contato">
+          <a
+            class="contact-link"
+            href="https://wa.me/5583996652001?text=Ol%C3%A1%20Laura%2C%20Gostaria%20de%20Agendar%20uma%20Consulta%21"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Enviar mensagem pelo WhatsApp"
+          >
+          <svg
+          id="Whatsapp-icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_10_288)">
+              <path
+                d="M20.4015 3.48908C19.3014 2.37833 17.9911 1.49775 16.5471 0.898724C15.1031 0.299696 13.5543 -0.00579123 11.991 8.31376e-05C5.4405 8.31376e-05 0.102 5.33708 0.096 11.8891C0.096 13.9876 0.645 16.0291 1.6815 17.8366L0 24.0001L6.306 22.3471C8.04973 23.2984 10.0046 23.7962 11.991 23.7946H11.997C18.549 23.7946 23.886 18.4576 23.892 11.8996C23.8933 10.3367 23.5855 8.78894 22.9862 7.3455C22.3869 5.90206 21.5094 4.59143 20.4015 3.48908ZM11.991 21.7816C10.2198 21.7802 8.48134 21.3036 6.957 20.4016L6.597 20.1856L2.856 21.1666L3.855 17.5171L3.621 17.1406C2.63071 15.5661 2.10697 13.7431 2.1105 11.8831C2.1105 6.44408 6.546 2.00708 11.997 2.00708C13.2956 2.00475 14.5818 2.25949 15.7815 2.75662C16.9812 3.25375 18.0707 3.98342 18.987 4.90358C19.9063 5.82031 20.6352 6.9099 21.1315 8.10957C21.6279 9.30925 21.8819 10.5953 21.879 11.8936C21.873 17.3521 17.4375 21.7816 11.991 21.7816ZM17.4135 14.3806C17.118 14.2321 15.6585 13.5136 15.384 13.4116C15.111 13.3141 14.9115 13.2631 14.7165 13.5601C14.517 13.8556 13.947 14.5291 13.776 14.7226C13.605 14.9221 13.428 14.9446 13.131 14.7976C12.8355 14.6476 11.877 14.3356 10.743 13.3201C9.858 12.5326 9.2655 11.5576 9.0885 11.2621C8.9175 10.9651 9.072 10.8061 9.2205 10.6576C9.351 10.5256 9.516 10.3096 9.6645 10.1386C9.8145 9.96758 9.864 9.84158 9.9615 9.64358C10.059 9.44258 10.0125 9.27158 9.939 9.12308C9.864 8.97458 9.2715 7.50908 9.021 6.91808C8.781 6.33458 8.5365 6.41558 8.3535 6.40808C8.1825 6.39758 7.983 6.39758 7.7835 6.39758C7.63286 6.40142 7.48464 6.4363 7.3481 6.50005C7.21156 6.56381 7.08965 6.65505 6.99 6.76808C6.717 7.06508 5.9535 7.78358 5.9535 9.24908C5.9535 10.7146 7.0185 12.1231 7.1685 12.3226C7.3155 12.5221 9.2595 15.5206 12.243 16.8106C12.948 17.1181 13.503 17.2996 13.9365 17.4376C14.649 17.6656 15.2925 17.6311 15.8055 17.5576C16.3755 17.4706 17.562 16.8376 17.8125 16.1431C18.0585 15.4471 18.0585 14.8531 17.9835 14.7286C17.91 14.6026 17.7105 14.5291 17.4135 14.3806Z"
+                fill="white"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_10_288">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+
+          <p>+55 (83) 99665-2001</p>
+          </a>
+
+          <a
+            class="contact-link"
+            href="https://www.instagram.com/psi.laurabergamo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir Instagram da Laura Bergamo"
+          >
+          <svg
+          id="Instagram-icon"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g clip-path="url(#clip0_10_290)">
+              <path
+                d="M12 0C8.7435 0 8.334 0.015 7.0545 0.072C5.775 0.132 4.9035 0.333 4.14 0.63C3.33877 0.930488 2.61321 1.4031 2.0145 2.0145C1.4031 2.61321 0.930488 3.33877 0.63 4.14C0.333 4.902 0.1305 5.775 0.072 7.05C0.015 8.3325 0 8.7405 0 12.0015C0 15.2595 0.015 15.6675 0.072 16.947C0.132 18.225 0.333 19.0965 0.63 19.86C0.9375 20.649 1.347 21.318 2.0145 21.9855C2.6805 22.653 3.3495 23.064 4.1385 23.37C4.9035 23.667 5.7735 23.8695 7.0515 23.928C8.3325 23.985 8.7405 24 12 24C15.2595 24 15.666 23.985 16.947 23.928C18.2235 23.868 19.098 23.667 19.8615 23.37C20.6622 23.0693 21.3872 22.5967 21.9855 21.9855C22.653 21.318 23.0625 20.649 23.37 19.86C23.6655 19.0965 23.868 18.225 23.928 16.947C23.985 15.6675 24 15.2595 24 12C24 8.7405 23.985 8.3325 23.928 7.0515C23.868 5.775 23.6655 4.902 23.37 4.14C23.0695 3.33877 22.5969 2.61321 21.9855 2.0145C21.3868 1.4031 20.6612 0.930488 19.86 0.63C19.095 0.333 18.222 0.1305 16.9455 0.072C15.6645 0.015 15.258 0 11.997 0H12ZM10.9245 2.163H12.0015C15.2055 2.163 15.585 2.1735 16.8495 2.232C18.0195 2.2845 18.6555 2.481 19.0785 2.6445C19.638 2.862 20.0385 3.123 20.4585 3.543C20.8785 3.963 21.138 4.362 21.3555 4.923C21.5205 5.3445 21.7155 5.9805 21.768 7.1505C21.8265 8.415 21.8385 8.7945 21.8385 11.997C21.8385 15.1995 21.8265 15.5805 21.768 16.845C21.7155 18.015 21.519 18.6495 21.3555 19.0725C21.1617 19.5929 20.8549 20.0637 20.457 20.451C20.037 20.871 19.638 21.1305 19.077 21.348C18.657 21.513 18.021 21.708 16.8495 21.762C15.585 21.819 15.2055 21.8325 12.0015 21.8325C8.7975 21.8325 8.4165 21.819 7.152 21.762C5.982 21.708 5.3475 21.513 4.9245 21.348C4.40375 21.1549 3.9324 20.8485 3.5445 20.451C3.14591 20.0634 2.83849 19.592 2.6445 19.071C2.481 18.6495 2.2845 18.0135 2.232 16.8435C2.175 15.579 2.163 15.1995 2.163 11.994C2.163 8.7885 2.175 8.412 2.232 7.1475C2.286 5.9775 2.481 5.3415 2.646 4.9185C2.8635 4.359 3.1245 3.9585 3.5445 3.5385C3.9645 3.1185 4.3635 2.859 4.9245 2.6415C5.3475 2.4765 5.982 2.2815 7.152 2.2275C8.259 2.1765 8.688 2.1615 10.9245 2.16V2.163ZM18.4065 4.155C18.2174 4.155 18.0301 4.19225 17.8554 4.26461C17.6807 4.33698 17.522 4.44305 17.3883 4.57677C17.2545 4.71048 17.1485 4.86923 17.0761 5.04394C17.0037 5.21864 16.9665 5.4059 16.9665 5.595C16.9665 5.7841 17.0037 5.97135 17.0761 6.14606C17.1485 6.32077 17.2545 6.47952 17.3883 6.61323C17.522 6.74695 17.6807 6.85302 17.8554 6.92539C18.0301 6.99775 18.2174 7.035 18.4065 7.035C18.7884 7.035 19.1547 6.88329 19.4247 6.61323C19.6948 6.34318 19.8465 5.97691 19.8465 5.595C19.8465 5.21309 19.6948 4.84682 19.4247 4.57677C19.1547 4.30671 18.7884 4.155 18.4065 4.155ZM12.0015 5.838C11.1841 5.82525 10.3723 5.97523 9.61347 6.27921C8.85459 6.58319 8.16377 7.03511 7.58123 7.60863C6.99868 8.18216 6.53605 8.86585 6.22026 9.61989C5.90448 10.3739 5.74185 11.1833 5.74185 12.0007C5.74185 12.8182 5.90448 13.6276 6.22026 14.3816C6.53605 15.1356 6.99868 15.8193 7.58123 16.3929C8.16377 16.9664 8.85459 17.4183 9.61347 17.7223C10.3723 18.0263 11.1841 18.1763 12.0015 18.1635C13.6193 18.1383 15.1623 17.4779 16.2975 16.3249C17.4326 15.1719 18.0689 13.6188 18.0689 12.0007C18.0689 10.3827 17.4326 8.82962 16.2975 7.67662C15.1623 6.52363 13.6193 5.86324 12.0015 5.838ZM12.0015 7.9995C12.5269 7.9995 13.0471 8.10298 13.5324 8.30402C14.0178 8.50506 14.4588 8.79974 14.8303 9.17122C15.2018 9.5427 15.4964 9.98371 15.6975 10.4691C15.8985 10.9544 16.002 11.4746 16.002 12C16.002 12.5254 15.8985 13.0456 15.6975 13.5309C15.4964 14.0163 15.2018 14.4573 14.8303 14.8288C14.4588 15.2003 14.0178 15.4949 13.5324 15.696C13.0471 15.897 12.5269 16.0005 12.0015 16.0005C10.9405 16.0005 9.92296 15.579 9.17272 14.8288C8.42248 14.0785 8.001 13.061 8.001 12C8.001 10.939 8.42248 9.92146 9.17272 9.17122C9.92296 8.42098 10.9405 7.9995 12.0015 7.9995Z"
+                fill="white"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_10_290">
+                <rect width="24" height="24" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+
+          <p>@psi.laurabergamo</p>
+          </a>
+        </div>
+
+        <footer class="site-footer">
+          <img src="./img/sevencode.svg" alt="SevenCode" />
+          <p>&copy; 2026 7 SevenCode. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
