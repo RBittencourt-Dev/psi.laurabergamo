@@ -181,6 +181,7 @@ h1 {
   background: #8aa6c2;
   color: #fff;
   font-size: 16px;
+  font-family: Poppins-R;
   margin-top: 400px;
   /* top: 65%;
   left: 5%; */
@@ -511,6 +512,7 @@ h1 {
   text-align: center;
   font-size: small;
 }
+
 
 
 /* Contato */
@@ -1076,7 +1078,7 @@ html {
   #Contato button,
   #home-button {
     width: 100%;
-    max-width: 290px;
+    max-width: 230px;
   }
 
   .container-cards {
